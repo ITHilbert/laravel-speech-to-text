@@ -1,0 +1,54 @@
+{
+    "name": "ithilbert/speech-to-text",
+    "type": "library",
+    "license": "MIT",
+    "description": "Austauschbare Speech-to-Text-Anbindung (Whisper self-hosted via HTTP/CLI, OpenAI, Browser) hinter einem Port/Adapter.",
+    "keywords": [
+        "it-hilbert",
+        "laravel",
+        "speech-to-text",
+        "whisper",
+        "transcription"
+    ],
+    "authors": [
+        {
+            "name": "Jörg Hilbert",
+            "homepage": "https://www.it-hilbert.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://www.it-hilbert.com",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.5",
+        "illuminate/support": "^11.0 || ^12.0",
+        "illuminate/http": "^11.0 || ^12.0",
+        "illuminate/routing": "^11.0 || ^12.0",
+        "illuminate/console": "^11.0 || ^12.0",
+        "symfony/process": "^6.0 || ^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0 || ^10.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ITHilbert\\SpeechToText\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ITHilbert\\SpeechToText\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ITHilbert\\SpeechToText\\SpeechToTextServiceProvider"
+            ],
+            "aliases": {
+                "SpeechToText": "ITHilbert\\SpeechToText\\Facades\\SpeechToText"
+            }
+        }
+    }
+}
